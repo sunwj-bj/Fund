@@ -104,7 +104,7 @@ def get_info(url):
 if __name__ == "__main__":
     #url = 'http://fund.eastmoney.com/allfund.html'
     #get_code(url)
-    fund_list = ['003096','161005']
+    fund_list = ['007120','003096','161005','002621','519674','161028','260108','180012','001938','110022','519732','519697']
     get_code_list(fund_list)
     with open('fund_url.txt', 'r') as f:
         i = 0
