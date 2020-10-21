@@ -55,10 +55,10 @@ def get_info(url):
     day = datetime.date.today()
     today = '%s' % day
 
-    with open('jijin1.html', 'w', encoding='utf-8') as f:
+    with open('tempFund.html', 'w', encoding='utf-8') as f:
         f.write(driver.page_source)
-    time.sleep(1)
-    file = open('jijin1.html', 'r', encoding='utf-8')
+    #time.sleep(1)
+    file = open('tempFund.html', 'r', encoding='utf-8')
     soup = BeautifulSoup(file, 'lxml')
 
     try:
@@ -110,6 +110,6 @@ if __name__ == "__main__":
         i = 0
         for url in f.readlines():
             get_info(url)
-            time.sleep(random.randint(0, 2))
+            #time.sleep(random.randint(0, 2))
             i = i + 1
         print('run times:', i)
