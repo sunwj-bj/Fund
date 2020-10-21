@@ -1,3 +1,6 @@
+"""
+该模块主要是为了获取所有基金代码，同时能获取每只基金的历史净值情况
+"""
 import json
 import math
 import random
