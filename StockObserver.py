@@ -6,9 +6,9 @@ var = 1
 
 print("价格监控开始...")
 while var == 1:
-    # 这里表示3秒钟循环一次
+    # 这里表示10秒钟循环一次
     time.sleep(10)
-    stock_list = ['600258', '600036','512800','000002','601933']
+    stock_list = ['600258', '600036','512800','000002','601933','600600']
     df = ts.get_realtime_quotes(stock_list)
     # 首旅酒店
     if float(df[df['code'] == '600258']['price']) <= 15.8:
@@ -25,3 +25,6 @@ while var == 1:
     # 万科A
     if float(df[df['code'] == '601933']['price']) <= 7.9:
         print(df[df['code'] == '601933'])
+    # 万科A(按照2020年中报TTM市盈率30估算的合理价格)
+    if float(df[df['code'] == '600600']['price']) <= 45.9:
+        print(df[df['code'] == '600600'])
