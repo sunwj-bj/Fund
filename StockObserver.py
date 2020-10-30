@@ -20,10 +20,10 @@ while var == 1:
     if float(df[df['code'] == '512800']['price']) <= 1.06:
         print(df[df['code'] == '512800'])
     # 万科A
-    if float(df[df['code'] == '000002']['price']) <= 27:
+    if float(df[df['code'] == '000002']['price']) <= 26.5:
         print(df[df['code'] == '000002'])
-    # 永辉超市(7.9进入观察，买点在7.5以下)
-    if float(df[df['code'] == '601933']['price']) <= 7.9:
+    # 永辉超市(7.5进入观察，买点在7.5以下)
+    if float(df[df['code'] == '601933']['price']) <= 7.5:
         print(df[df['code'] == '601933'])
     # 青岛啤酒(按照2020年中报TTM市盈率30估算的合理价格)
     if float(df[df['code'] == '600600']['price']) <= 45.9:
