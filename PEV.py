@@ -21,8 +21,8 @@ def get_final(start, years, cagr):
 
 
 # 计算市盈率
-def get_pe(total, profitThisYear):
-    return total / profitThisYear
+def get_pe(total, profit_this_year):
+    return total / profit_this_year
 
 
 if __name__ == "__main__":
@@ -36,7 +36,6 @@ if __name__ == "__main__":
     print("年复合增长率为：{}".format(cagr))
     print("根据当前年复合增长率测算的利润为：{}".format(final_profit))
     print("根据测算利润来计算当前市盈率为：{}".format(pe))
-
 
     # 中国平安总股本182.8亿
     pingan_stock_count = 18280000000
