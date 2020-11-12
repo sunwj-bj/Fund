@@ -20,6 +20,7 @@ def format_amount(amount):
     return Series(tmp_list)
 
 
+# 股票和指数的涨跌幅都是以昨日收盘价为基础，和当天开盘价无关
 def format_ratio(price, pre_close):
     tmp_price = []
     tmp_open = []
@@ -37,7 +38,7 @@ def format_ratio(price, pre_close):
 if __name__ == "__main__":
     # 6位数字股票代码，或者指数代码（sh=上证指数 sz=深圳成指 hs300=沪深300指数 sz50=上证50 zxb=中小板 cyb=创业板）
     # 可输入的类型：str、list、set或者pandas的Series对象
-    stock_list = ['sh', 'sz', 'cyb','601288','000651','600690','601318','512800','159920']
+    stock_list = ['sh', 'sz', 'cyb', '601288', '000651', '600690', '601318', '512800', '159920', '513050', '600036', '600048', '600900', '002044']
     df = ts.get_realtime_quotes(stock_list)
     e = df[['name', 'open', 'price', 'amount', 'pre_close']]
     e['turn_volume'] = format_amount(e['amount'])
