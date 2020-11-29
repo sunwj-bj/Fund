@@ -38,9 +38,19 @@ def format_ratio(price, pre_close):
 if __name__ == "__main__":
     # 6位数字股票代码，或者指数代码（sh=上证指数 sz=深圳成指 hs300=沪深300指数 sz50=上证50 zxb=中小板 cyb=创业板）
     # 可输入的类型：str、list、set或者pandas的Series对象
-    stock_list = ['sh', 'sz', 'cyb', '601288', '000651', '600690', '601318', '512800', '159920', '513050', '600036', '600048', '600900', '002044', '000538']
+
+    '''
+    农业银行 买入成本3.195  股息率5.6%左右(分红金额按照20年计算，成本按照买入成本计算)
+    格力电器 安全市盈率在10左右
+    海尔智家 安全市盈率在10左右 私有化之后的净利润率还有待观察
+    '''
+
+    stock_list = ['sh', 'sz', 'cyb', '601288', '000651', '600690', '601318', '512800', '159920', '513050', '600036',
+                  '600048', '600900', '002044', '000538']
     df = ts.get_realtime_quotes(stock_list)
     e = df[['name', 'open', 'price', 'amount', 'pre_close']]
-    e['turn_volume'] = format_amount(e['amount'])
+    # 对amount进行转换，单位为亿
+    e['amount'] = format_amount(e['amount'])
+    # 计算涨跌幅
     e['ratio'] = format_ratio(e['price'], e['pre_close'])
     print(e)
